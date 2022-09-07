@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:repaso/pages/home_page.dart';
 
 void main() => runApp(const MyApp());
 
@@ -8,17 +9,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Repaso de Flutter',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Repaso de Flutter'),
-        ),
-        body: Center(
-          child: Container(
-            child: Text('Holaaaaaaaaa'),
-          ),
-        ),
-      ),
+      //home: HomePage(), //esto es cuando hay una página
+      initialRoute: 'home',
+      routes: {
+        'home' : (_) => HomePage(),
+      },
     );
   }
 }
